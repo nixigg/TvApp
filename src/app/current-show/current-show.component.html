@@ -1,0 +1,36 @@
+
+<div class="container bg-info">
+  <div class="card card-body list-unstyled">
+    <h3>  {{current?.name}} </h3> 
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-fluid img-thumbnail" [src]='current?.image' alt='movie-picture'>
+      </div>
+      <div class="col-sm-8">
+        <ul class="list-group mb-2"> 
+            <li class="list-group-item"><span class="text-info">Channel: </span> {{current?.channel}} </li>
+            <li class="list-group-item"><span class="text-info">Time:</span> {{current?.time}} </li>
+            <li class="list-group-item"><span class="text-info">Day:</span> {{current?.days}} </li>
+        </ul>
+        <button class="btn btn-info btn-block" (click)="toggleHide(current)">
+          <i [ngClass]="current.hide ? 'fa fa-arrow-up' : 'fa fa-arrow-down'" aria-hidden="true"></i></button>
+        <div  *ngIf="current.hide">
+          <ul class="list-group">
+            <li class="list-group-item"><span class="text-info">Language:</span> {{current?.language}} </li>
+            <li class="list-group-item"><span class="text-info">Genres:</span> {{current?.genres}} </li>
+            <li class="list-group-item"><span class="text-info">Rating:</span> {{current?.rating}} </li> 
+          </ul>
+          <div class="border border-white">
+            <div><span class="text-info">Description: </span> {{current?.description}} </div>
+          </div>   
+        </div>    
+                                
+        
+           
+      </div>
+    </div>   
+  </div>
+</div>
+
+
+
